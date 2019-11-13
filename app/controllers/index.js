@@ -19,7 +19,6 @@ module.exports.autenticar = function(application, req, res){
 	const connection = application.config.dbConnection;
 	const UserDAO = new application.app.models.UsuariosDAO(connection);
 
-	UserDAO.autenticar(formData);
+	UserDAO.autenticar(formData, req, res);
 
-	res.send('All fine');
 }
